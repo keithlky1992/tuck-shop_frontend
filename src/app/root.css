@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+}
+
+.root-background {
+    display: flex;
+    height: 100vh;
+}
+
+.menuContainer {
+    flex: 0 0 400px;
+    background-color: aqua;
+}
+
+.main-content {
+    flex: 1;
+    background-color: yellow;
+}
+
+.system-name {
+    text-align: center;
+    margin-top: 10px;
+}
