@@ -7,6 +7,7 @@ import {
     useState,
     useEffect
 } from "react";
+import { useMember } from "@/app/layout";
 
 export default function Register() {
     const [username, setUsername] = useState('');
