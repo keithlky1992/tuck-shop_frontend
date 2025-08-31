@@ -1,0 +1,16 @@
+.welcomeMsgWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 45px;
+    color: white;
+}
+
+.welcomeMsg {
+    background-color: #00878c;
+    padding: 32px;
+    width: 60vw;
+    border-radius: 50px;
+    text-align: center;
+}

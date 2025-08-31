@@ -1,0 +1,23 @@
+.menu {
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+.logoContainer img {
+    border-radius: 20px;
+}
+
+.menu div {
+    border-radius: 20px;
+    padding: 20px 0 20px 35px;
+}
+
+.menu :hover {
+    font-weight: bold;
+    background-color: aquamarine;
+
+}
+
+.menu a {
+    text-decoration: none;
+}

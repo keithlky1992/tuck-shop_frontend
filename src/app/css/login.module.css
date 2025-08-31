@@ -1,0 +1,73 @@
+.mainContent {
+    display: flex;
+    /* background-color: #c6f4f6; */
+    /* background-color: #32e0e7; */
+    padding: 30px;
+    border-radius: 60px;
+    border: 5px solid gray;
+}
+
+.loginForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loginForm input {
+    border-radius: 10px;
+    border: 1px solid gray;
+    height: 48px;
+    width: 390px;
+    font-size: 25px;
+    padding: 0 0 0 10px;
+}
+
+.welcomeMsg {
+    font-size: 30px;
+    padding: 20px;
+}
+
+.inputWrapper {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 25px;
+}
+
+.inputWrapper>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.labelWrapper {
+    width: 135px;
+    display: flex;
+    justify-content: center;
+}
+
+.loginButtonWrapper {
+    margin: 10px;
+}
+
+.loginButtonWrapper input:hover {
+    background-color: #026a6b;
+    font-weight: bold;
+}
+
+.loginButtonWrapper input {
+    width: 200px;
+    height: 35px;
+    background-color: #00878c;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+}
+
+.registerPrompt {
+    font-size: 20px;
+    margin: 20px;
+}

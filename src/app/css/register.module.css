@@ -1,0 +1,126 @@
+.mainContent {
+    display: flex;
+    /* background-color: #c6f4f6; */
+    /* background-color: #32e0e7; */
+    padding: 30px;
+    border-radius: 60px;
+    border: 5px solid gray;
+}
+
+.registerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.usernameAndPasswordWrapper input,
+.companyNameWrapper input {
+    border-radius: 10px;
+    border: 1px solid gray;
+    height: 48px;
+    width: 390px;
+    font-size: 25px;
+    padding: 0 0 0 10px;
+}
+
+.welcomeMsg {
+    font-size: 30px;
+    padding: 20px;
+}
+
+.usernameAndPasswordWrapper,
+.companyNameWrapper {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 25px;
+}
+
+.usernameAndPasswordWrapper>div,
+.companyNameWrapper>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.labelWrapper {
+    width: 206px;
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;
+}
+
+
+.registerButtonWrapper {
+    margin: 16px 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerButtonWrapper input:hover {
+    background-color: #026a6b;
+    font-weight: bold;
+}
+
+.registerButtonWrapper input {
+    width: 200px;
+    height: 35px;
+    background-color: #00878c;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+}
+
+.loginPrompt {
+    font-size: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.registrationTypeWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+.clientRadioWrapper {
+    margin: 0 10px 0 0;
+}
+
+.registrationTypeRadioWrapper {
+    display: flex;
+    width: 402px;
+}
+
+.logoUploadWrapper {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    font-size: 20px;
+    margin: 15px 15px 30px;
+}
+
+.logoInput input {
+    display: none;
+}
+
+.logoButton {
+    width: 350px;
+    height: 35px;
+    background-color: #9ba21f;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+}
+
+.logoButton:hover {
+    background-color: #797e17;
+    font-weight: bold;
+}
