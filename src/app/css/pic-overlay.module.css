@@ -1,0 +1,21 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 20px;
+    background-color: #8080809e;
+    padding: 10px;
+    /* visibility: hidden; */
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+/* .overlay.open {
+    visibility: visible;
+} */
+

@@ -1,0 +1,18 @@
+import React, { useState, useEffect, useRef } from 'react';
+import snackBarStyles from '../css/snack-bar.module.css';
+// import '../css/snack-bar.module.css'
+// import './Snackbar.css'; // 引入樣式
+function Snackbar({ message, show }) {
+
+    return (
+        <div>
+            <div
+                className={snackBarStyles.snackbar + ' ' + (show ? snackBarStyles.show : '')}
+            >
+                {message}
+            </div>
+        </div>
+    );
+}
+
+export default Snackbar;

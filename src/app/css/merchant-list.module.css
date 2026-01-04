@@ -1,0 +1,146 @@
+.mainContentContainer {
+    padding-bottom: 50px;
+}
+
+.heading,
+.total {
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 50px;
+
+}
+
+.total {
+    font-size: 26px;
+}
+
+.allMerchantContainer {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin: 60px 0 0 30px;
+}
+
+.wholeMerchantContainer {
+    height: 450px;
+}
+
+.relevantItemLink {
+    color: #111;
+    text-decoration: none;
+}
+
+.relevantItemLink:hover {
+    font-weight: bold;
+}
+
+.merchantContainer {
+    border-radius: 20px;
+    /* background-color: #80808021; */
+    background-color: #fff;
+    /* background-color: rgb(255, 221, 127); */
+    padding: 10px;
+}
+
+.merchantContainer:hover {
+    /* background-color: #80808061; */
+    background-color: rgb(255 187 0);
+}
+
+.merchantContainer img {
+    object-fit: contain;
+    width: 300px;
+    height: 300px;
+    /* cursor: pointer; */
+}
+
+.merchantUsername {
+    text-align: center;
+    font-size: 24px;
+}
+
+.subscriptionContainer {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    /* margin-bottom: 50px; */
+}
+
+.subscribe {
+    /* background-color: #fff; */
+    /* background-color: rgb(255, 221, 127); */
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px;
+    /* border: 1px black solid; */
+    border-radius: 15px;
+    font-size: 20px;
+    width: fit-content;
+}
+
+.subscribe:hover {
+    background-color: #c70202;
+
+}
+
+.subscribed:hover,
+.unsubscribe:hover {
+    background-color: #0600bc;
+}
+
+.subscribed,
+.unsubscribe {
+    /* background-color: #000; */
+    background-color: #0900ff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 20px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.subscribe:hover,
+.subscribed:hover,
+.unsubscribe:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.subscribed img {
+    width: 23px;
+}
+
+.subscribedUnsubscribeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+@media only screen and (max-width: 600px) {
+    .allMerchantContainer {
+        justify-content: center;
+        align-items: center;
+        margin: 60px 0 0 0;
+        gap: 26px;
+    }
+
+    .merchantContainer img {
+        object-fit: contain;
+        width: 260px;
+        height: 260px;
+        /* cursor: pointer; */
+    }
+
+    .wholeMerchantContainer {
+        height: 420px;
+    }
+}

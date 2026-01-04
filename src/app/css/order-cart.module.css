@@ -1,0 +1,238 @@
+.heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 30px;
+}
+
+.orderCartIsEmpty {
+    font-size: 24px;
+    margin-left: 30px;
+}
+
+.ifOrderCartIsNotEmpty {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-right: 30px;
+    /* align-items: center; */
+}
+
+
+.table {
+    /* margin-left: 30px; */
+    border-radius: 20px;
+    background-color: #fff;
+    /* border: 1px solid black; */
+    border-spacing: 0;
+    width: fit-content;
+}
+
+/* .itemIdTableHeading,
+.itemNameTableHeading,
+.quantityTableHeading { */
+.table th {
+    font-size: 24px;
+    padding: 25px;
+    text-align: left;
+    color: #fff;
+    background-color: #001eff;
+    /* width: min-content; */
+}
+
+/* .emptyOrderCartTableHeading {
+    font-size: 100px;
+} */
+
+.quantityTableHeading {
+    width: 510px;
+    box-sizing: border-box;
+}
+
+
+
+.table td {
+    text-align: left;
+    font-size: 22px;
+    padding: 25px;
+}
+
+.thead tr th:first-child {
+    border-top-left-radius: 20px;
+}
+
+.thead tr th:last-child {
+    border-top-right-radius: 20px;
+}
+
+.tbody tr:hover {
+    background-color: rgb(255, 221, 127);
+}
+
+.tbody tr:hover td:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.tbody tr:hover td:last-child {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.plusBtnQuantityInputMinusBtnContainer {
+    display: flex;
+    justify-content: left;
+}
+
+.plusImg,
+.minusImg {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.plusImg:hover,
+.minusImg:hover {
+    background-color: #b9b9b9;
+    border-radius: 50%;
+}
+
+.quantityInput {
+    font-size: 24px;
+    width: 80px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+
+.isNaNText,
+.isNotAnIntegerText,
+.minMaxNumText {
+    text-align: left;
+    color: red;
+    /* height: 37px; */
+    max-height: 90px;
+}
+
+.emptyOrderCartContainer {
+    margin-bottom: 10px;
+}
+
+.emptyOrderCart {
+    /* background-color: #e5e5e5; */
+    background-color: #ff0000;
+    padding: 10px;
+    /* border: 1px black solid; */
+    border: 0;
+    border-radius: 15px;
+    font-size: 20px;
+    /* color: black; */
+    color: #fff;
+    font-weight: initial;
+    text-align: center;
+    width: 183px;
+    box-sizing: border-box;
+}
+
+.emptyOrderCart:hover {
+    cursor: pointer;
+    font-weight: bold;
+    /* background-color: #ccc8c8; */
+    background-color: #c70202;
+}
+
+/* .cancelThisItemContainer {
+    width: 180px;
+} */
+
+.cancelThisItem {
+    /* background-color: #e5e5e5; */
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px;
+    /* border: 1px black solid; */
+    border: 0;
+    border-radius: 15px;
+    font-size: 20px;
+    text-align: center;
+    width: 180px;
+    box-sizing: border-box;
+}
+
+
+.cancelThisItem:hover {
+    cursor: pointer;
+    font-weight: bold;
+    /* background-color: #ccc8c8; */
+    background-color: #c70202;
+
+}
+
+.confirmTheOrderContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding-bottom: 50px;
+}
+
+.confirmTheOrder {
+    /* background-color: #e5e5e5; */
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px;
+    /* border: 1px black solid; */
+    border: 0;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+.confirmTheOrder:hover {
+    cursor: pointer;
+    font-weight: bold;
+    /* background-color: #ccc8c8; */
+    background-color: #c70202;
+}
+
+@media only screen and (max-width: 600px) {
+    .table th {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .table td {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .plusImg,
+    .minusImg {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .plusBtnQuantityInputMinusBtnContainer {
+        align-items: center;
+    }
+
+    .quantityInput {
+        font-size: 15px;
+        width: 50px;
+    }
+
+    .emptyOrderCart {
+        font-size: 15px;
+        width: 60px;
+    }
+
+    .emptyOrderCartContainer {
+        margin: 0;
+    }
+
+    .cancelThisItem {
+        font-size: 15px;
+        width: 60px;
+    }
+
+}

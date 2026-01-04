@@ -1,0 +1,124 @@
+.root {
+    padding-bottom: 50px;
+}
+
+.heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 30px;
+}
+
+.itemIdWrapper,
+.itemNameWrapper,
+.merchantWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.itemNameWrapper {
+    /* display: flex;
+    align-items: center;
+    gap: 10px; */
+    margin-bottom: 20px;
+}
+
+.itemIdWrapper,
+.itemNameWrapper,
+.merchantWrapper {
+    font-size: 24px;
+    margin-left: 30px;
+}
+
+.itemIdWrapper {
+    margin-bottom: 20px;
+}
+
+.merchantWrapper {
+    margin-bottom: 50px;
+}
+
+.allPictureWrapper {
+    margin-left: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.pictureContainer {
+    border-radius: 20px;
+    /* background-color: #80808021; */
+    background-color: #fff;
+    /* background-color: rgb(255, 221, 127); */
+    padding: 10px;
+    position: relative;
+}
+
+.pictureContainer:hover {
+    /* background-color: #80808061; */
+    background-color: rgb(255 187 0);
+    cursor: pointer;
+}
+
+.itemId,
+.itemName,
+.merchant {
+    margin-right: 10px;
+}
+
+.img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+
+.magnifiedImg {
+    width: 600px;
+    height: 600px;
+    object-fit: contain;
+}
+
+.closeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c53030;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.closeBtn>div {
+    position: absolute;
+    bottom: 0;
+    font-size: 50px;
+    color: #fff;
+}
+
+.closeBtn:hover {
+    background-color: #900202;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .allPictureWrapper {
+        justify-content: center;
+        align-items: center;
+        margin: 60px 0 0 0;
+    }
+
+    .img {
+        width: 260px;
+        height: 260px;
+        /* object-fit: contain; */
+    }
+
+    .magnifiedImg {
+        width: 360px;
+        height: 600px;
+        /* object-fit: contain; */
+    }
+}

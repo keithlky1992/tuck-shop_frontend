@@ -11,8 +11,9 @@ import {
 
 export default function Login() {
     const memberContext = useMember();
-    const { isLoggedIn, setIsLoggedIn } = memberContext;
+    const { isLoggedIn, setIsLoggedIn, type, setType, token, setToken, user, setUser, setShowMenuImage, setShowCloseImage } = memberContext;
     console.log('login', isLoggedIn);
+    console.log('login', type);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const router = useRouter();
@@ -76,52 +77,78 @@ export default function Login() {
             console.log("success")
             console.log(username, password);
             localStorage.setItem('token', resData.token);
+            localStorage.setItem('userType', resData.type);
+            localStorage.setItem('username', username);
             setIsLoggedIn(true);
-            router.replace('/client');
+            setType(resData.type);
+            setToken(resData.token);
+            setUser(username);
+            console.log(type);
+            console.log(token);
+            console.log(user);
+            console.log(username);
+            resData.type === 'merchant' ? router.replace('/members/merchants') : router.replace('/members/clients');
         } else {
             setIsLoggedIn(false);
             alert(resData.msg || 'Login failed. Please try again.');
         }
     }
 
-    return (
-        <div
-            className={loginStyles.mainContent}
-            style={{ display: isLoggedIn ? 'none' : 'block' }}
-        >
-            <form onSubmit={handleLoginClick}>
-                <div className={loginStyles.loginWrapper}>
-                    <div className={loginStyles.welcomeMsg}>Welcome to use Tuck Shop Restocking System</div>
-                    <div className={loginStyles.loginForm}>
-                        <div className={loginStyles.inputWrapper}>
-                            <div>
-                                <div className={loginStyles.labelWrapper}>
-                                    <label htmlFor="username">Username:</label>
-                                </div>
-                                <div className={loginStyles.usernameInput}>
-                                    <input id="username" type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="username" required />
-                                </div>
-                            </div>
-                            <div>
-                                <div className={loginStyles.labelWrapper}>
-                                    <label htmlFor="password">Password:</label>
-                                </div>
-                                <div className={loginStyles.passwordInput}>
-                                    <input id="password" type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="password" required />
-                                </div>
-                            </div>
-                        </div>
-                        <div className={loginStyles.loginButtonWrapper}>
-                            <input type="submit" value="Login" />
-                        </div>
-                        <div className={loginStyles.registerPrompt}>
-                            Don't have an account?{' '}
-                            <span><Link href="/users/register">Register</Link></span>
-                        </div>
+    useEffect(() => {
+        setShowMenuImage(true);
+        setShowCloseImage(false);
+        const token = localStorage.getItem('token');
+        const userType = localStorage.getItem('userType');
+        if (token) {
+            if (userType === 'merchant') {
+                router.push('/members/merchants');
+            } else {
+                router.push('/members/clients');
+            }
+        }
+    }, [token]);
 
+
+    return (
+        <div className={loginStyles.mainContentContainer}>
+            <div
+                className={loginStyles.mainContent}
+                style={{ display: isLoggedIn ? 'none' : 'block' }}
+            >
+                <form onSubmit={handleLoginClick}>
+                    <div className={loginStyles.loginWrapper}>
+                        <div className={loginStyles.welcomeMsg}>Welcome to use Tuck Shop Restocking System</div>
+                        <div className={loginStyles.loginForm}>
+                            <div className={loginStyles.inputWrapper}>
+                                <div>
+                                    <div className={loginStyles.labelWrapper}>
+                                        <label htmlFor="username">Username:</label>
+                                    </div>
+                                    <div className={loginStyles.usernameInput}>
+                                        <input id="username" type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="username" required />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className={loginStyles.labelWrapper}>
+                                        <label htmlFor="password">Password:</label>
+                                    </div>
+                                    <div className={loginStyles.passwordInput}>
+                                        <input id="password" type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="password" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={loginStyles.loginButtonWrapper}>
+                                <input type="submit" value="Login" />
+                            </div>
+                            <div className={loginStyles.registerPrompt}>
+                                Don't have an account?{' '}
+                                <span><Link href="/users/register">Register</Link></span>
+                            </div>
+
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     )
 }

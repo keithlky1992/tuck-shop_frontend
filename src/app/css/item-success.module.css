@@ -1,0 +1,8 @@
+.mainContentContainer {
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    height: 80vh;
+    flex-direction: column;
+    margin: 40px 35px 0 35px;
+}

@@ -1,0 +1,109 @@
+.mainContentContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    /* align-items: center; */
+    /* height: 100vh; */
+}
+
+.mainContent {
+    display: flex;
+    padding: 30px;
+    border-radius: 60px;
+    border: 5px solid gray;
+    flex-direction: column;
+}
+
+.heading {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+.itemIdWrapper,
+.currentItemNameWrapper {
+    display: flex;
+}
+
+.itemIdWrapper,
+.currentItemNameWrapper,
+.newItemNameWrapper {
+    font-size: 25px;
+}
+
+.newItemNameWrapper input {
+    width: 390px;
+    height: 48px;
+    font-size: 25px;
+    border-radius: 10px;
+    /* border: 1px solid gray; */
+    border: 0;
+    padding: 0 0 0 10px;
+}
+
+.itemId,
+.currentItemName,
+.newItemNameWrapper label {
+    margin-right: 10px;
+}
+
+.itemIdWrapper,
+.currentItemNameWrapper,
+.newItemNameWrapper {
+    margin: 15px 15px 30px;
+}
+
+.updateWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.updateWrapper input {
+    width: 200px;
+    height: 35px;
+    background-color: #00878c;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+}
+
+.updateWrapper input:hover {
+    cursor: pointer;
+    background-color: #026a6b;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .mainContent {
+        width: 320px;
+        padding: 10px;
+        /* border: 0; */
+        border: 4px solid gray;
+    }
+
+    .heading {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .itemIdWrapper,
+    .currentItemNameWrapper,
+    .newItemNameWrapper {
+        font-size: 15px;
+    }
+
+    .newItemNameWrapper input {
+        height: 35px;
+        width: 280px;
+        font-size: 15px;
+        padding: 0 0 0 10px;
+    }
+
+     .updateWrapper input {
+        font-size: 15px;
+        width: 100px;
+    }
+}

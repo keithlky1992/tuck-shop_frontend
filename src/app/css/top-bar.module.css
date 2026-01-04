@@ -1,0 +1,173 @@
+.topBar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #f1efef;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.menuImage {
+    /* width: 30px;
+    height: 30px;
+    cursor: pointer; */
+    display: none;
+}
+
+.closeImage {
+    /* width: 30px;
+    height: 30px;
+    cursor: pointer; */
+    display: none;
+}
+
+.tuckShop {
+    display: none;
+}
+
+.systemName {
+    display: none;
+}
+
+.soundImageContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    font-size: 24px;
+}
+
+.soundImageContainer img {
+    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #111;
+    cursor: pointer;
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+}
+
+.soundImageContainer img:hover {
+    width: 55px;
+    height: 55px;
+}
+
+.voiceCommand1 {
+    display: initial;
+}
+
+.voiceCommand2 {
+    display: none;
+}
+
+.menu {
+    display: none;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .topBar {
+        display: flex;
+        justify-content: flex-start;
+        height: 120px;
+        align-items: normal;
+        flex-direction: column;
+    }
+
+    .upperTopBar {
+        display: flex;
+        /* justify-content: flex-start; */
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+    }
+
+    .menuImageAndCloseImageContainer {
+        flex: 1;
+    }
+
+    .menuImage {
+        padding: 10px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        display: initial;
+        /* display: none; */
+    }
+
+    .closeImage {
+        padding: 10px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        display: initial;
+        /* display: none; */
+    }
+
+
+    .tuckShopImgAndSystemNameContainer {
+        flex: 0 0 190px;
+        /* flex: 1; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .tuckShop {
+        display: block;
+        width: 35px;
+        height: 35px;
+        padding: 5px;
+        /* flex: 0 0 200px; */
+    }
+
+    .soundImageContainer {
+        flex: 1;
+        font-size: 15px;
+    }
+
+    .soundImageContainer img {
+        border-radius: 10px;
+        width: 30px;
+        height: 30px;
+        background-color: #111;
+        cursor: pointer;
+    }
+
+    .soundImageContainer img:hover {
+        width: 35px;
+        height: 35px;
+    }
+
+    .systemName {
+        display: block;
+        text-align: center;
+        font-family: Tahoma;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .voiceCommand1 {
+        display: none;
+    }
+
+    .voiceCommand2 {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .menu {
+        display: initial;
+        position: fixed;
+        top: 60px;
+        z-index: 10;
+        background-color: #fff;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+}

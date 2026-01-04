@@ -1,23 +1,71 @@
 .menu {
+    /* .menuLogout button { */
     font-family: sans-serif;
-    font-size: 30px;
+    /* font-size: 30px; */
+    font-size: 25px;
 }
 
-.logoContainer img {
+
+/* .menuLogout button {
+    background-color: transparent;
+    border: none;
+} */
+
+/* .logoContainer img {
     border-radius: 20px;
-}
+} */
 
-.menu div {
+/* .menuLogin,
+.menuRegister,
+.menuLogout { */
+/* .menu div { */
+.link>div,
+.menuLogout {
     border-radius: 20px;
-    padding: 20px 0 20px 35px;
+    /* color: rgb(43 86 144); */
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 15px 20px 15px;
 }
 
-.menu :hover {
+/* .menuLogin,
+.menuRegister,
+.menuMerchants,
+.menuSubscribedMerchants,
+.menuOrderHistory,
+.menuClientItems,
+.menuOrderCart,
+.menuSubscribers,
+.menuOrders,
+.menuMerchantItems, */
+
+/* .menuLogout {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+} */
+
+.menu img {
+    width: 50px;
+    height: 50px;
+    border-radius: 30%;
+}
+
+.menu :hover,
+.menuLogout :hover {
     font-weight: bold;
-    background-color: aquamarine;
-
+    background-color: rgb(255, 221, 127);
+    cursor: pointer;
 }
 
 .menu a {
     text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    /* .menu {
+        display: none;
+    } */
 }

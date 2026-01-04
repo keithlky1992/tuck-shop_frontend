@@ -1,3 +1,10 @@
+.mainContentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+}
+
 .mainContent {
     display: flex;
     /* background-color: #c6f4f6; */
@@ -17,7 +24,8 @@
 .usernameAndPasswordWrapper input,
 .companyNameWrapper input {
     border-radius: 10px;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
+    border: 0;
     height: 48px;
     width: 390px;
     font-size: 25px;
@@ -26,6 +34,7 @@
 
 .welcomeMsg {
     font-size: 30px;
+    font-weight: bold;
     padding: 20px;
 }
 
@@ -61,6 +70,7 @@
 }
 
 .registerButtonWrapper input:hover {
+    cursor: pointer;
     background-color: #026a6b;
     font-weight: bold;
 }
@@ -121,6 +131,88 @@
 }
 
 .logoButton:hover {
+    cursor: pointer;
     background-color: #797e17;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+    .mainContentContainer {
+        height: auto;
+    }
+
+    .mainContent {
+        width: 320px;
+        padding: 10px;
+        /* border: 0; */
+        border: 4px solid gray;
+
+    }
+
+    .welcomeMsg {
+        font-size: 20px;
+        /* font-weight: bold; */
+        padding: 10px;
+        height: 50px;
+        text-align: center;
+    }
+
+    .usernameAndPasswordWrapper,
+    .companyNameWrapper {
+        font-size: 15px;
+    }
+
+    .registrationTypeWrapper {
+        font-size: 15px;
+    }
+
+    .usernameAndPasswordWrapper input,
+    .companyNameWrapper input {
+        /* border-radius: 10px; */
+        /* border: 1px solid gray; */
+        /* border: 0; */
+        height: 35px;
+        width: 200px;
+        font-size: 15px;
+        padding: 0 0 0 10px;
+    }
+
+    .loginPrompt {
+        width: fit-content;
+    }
+
+    .logoUploadWrapper {
+        font-size: 15px;
+    }
+
+    .logoButton {
+        width: 292px;
+        font-size: 15px;
+    }
+
+    .registerButtonWrapper input {
+        font-size: 15px;
+    }
+
+    .registrationTypeRadioWrapper {
+        /* width: 200px; */
+        width: fit-content;
+    }
+
+    .labelWrapper {
+        width: fit-content;
+    }
+
+    .loginPromptWrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .loginPrompt {
+        font-size: 15px;
+    }
+
+    .labelWrapper.companyNameLabelWrapper {
+        text-align: center;
+    }
 }

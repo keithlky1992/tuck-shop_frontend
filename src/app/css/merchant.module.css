@@ -1,0 +1,28 @@
+.welcomeMsgWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70dvh;
+    font-size: 45px;
+    /* color: white; */
+}
+
+.welcomeMsgForBrowser {
+    background-color: #9e9e9e08;
+    padding: 32px;
+    width: 100dvw;
+    border-radius: 50px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .welcomeMsgWrapper {
+        font-size: 26px;
+        /* font-size: 30px; */
+    }
+
+    .welcomeMsgForBrowser {
+        padding: 5px;
+        /* padding: 15px; */
+    }
+}

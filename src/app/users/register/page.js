@@ -10,6 +10,10 @@ import {
 import { useMember } from "@/app/layout";
 
 export default function Register() {
+    const memberContext = useMember();
+    const { isLoggedIn, setIsLoggedIn, type, setType, token, setToken, user, setUser, setShowMenuImage, setShowCloseImage } = memberContext;
+    console.log('register', isLoggedIn);
+    console.log('register', type);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [registrationType, setRegistrationType] = useState('');
@@ -27,7 +31,7 @@ export default function Register() {
     const handleLogoChange = (e) => {
         console.log(e.target.files);
         console.log(e.target.files[0]);
-        console.log(e.target.files[0].name);
+        // console.log(e.target.files[0].name);
         if (e.target.files.length > 0) {
             setLogo(e.target.files[0]);
         }
@@ -100,95 +104,138 @@ export default function Register() {
         const resData = await response.json();
         console.log(resData);
         if (resData.success) {
-            router.replace('/client');
+            localStorage.setItem('token', resData.token);
+            localStorage.setItem('userType', resData.type);
+            localStorage.setItem('username', username);
+            setIsLoggedIn(true);
+            setType(resData.type);
+            setToken(resData.token);
+            setUser(username);
+            console.log(type);
+            console.log(token);
+            console.log(user);
+            console.log(username);
+            resData.type === 'merchant' ? router.replace('/members/merchants') : router.replace('/members/clients');
         } else {
+            setIsLoggedIn(false);
             alert(resData.msg || 'Registration failed. Please try again.');
         }
     }
 
+    useEffect(() => {
+        setShowMenuImage(true);
+        setShowCloseImage(false);
+        const token = localStorage.getItem('token');
+        const userType = localStorage.getItem('userType');
+        if (token) {
+            if (userType === 'merchant') {
+                router.push('/members/merchants');
+            } else {
+                router.push('/members/clients');
+            }
+        }
+    }, [token]);
 
     return (
-        <div className={registerStyles.mainContent}>
-            <form onSubmit={handleRegisterClick}>
-                <div className={registerStyles.registerWrapper}>
-                    <div className={registerStyles.welcomeMsg}>Welcome to use Tuck Shop Restocking System</div>
-                    <div className={registerStyles.registerForm}>
-                        <div>
-                            <div className={registerStyles.usernameAndPasswordWrapper}>
-                                <div>
+        <div className={registerStyles.mainContentContainer}>
+            <div className={registerStyles.mainContent}>
+                <form onSubmit={handleRegisterClick}>
+                    <div className={registerStyles.registerWrapper}>
+                        <div className={registerStyles.welcomeMsg}>Welcome to use Tuck Shop Restocking System</div>
+                        <div className={registerStyles.registerForm}>
+                            <div>
+                                <div className={registerStyles.usernameAndPasswordWrapper}>
+                                    <div>
+                                        <div className={registerStyles.labelWrapper}>
+                                            <label htmlFor="username">Username:</label>
+                                        </div>
+                                        <div className={registerStyles.usernameInput}>
+                                            <input id="username" type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="username" required />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className={registerStyles.labelWrapper}>
+                                            <label htmlFor="password">Password:</label>
+                                        </div>
+                                        <div className={registerStyles.passwordInput}>
+                                            <input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}
+                                                placeholder="password" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={registerStyles.registrationTypeWrapper}>
                                     <div className={registerStyles.labelWrapper}>
-                                        <label htmlFor="username">Username:</label>
+                                        Registration Type:
                                     </div>
-                                    <div className={registerStyles.usernameInput}>
-                                        <input id="username" type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="username" required />
+                                    <div className={registerStyles.registrationTypeRadioWrapper}>
+                                        <div className={registerStyles.clientRadioWrapper}>
+                                            <input checked={registrationType === "client"} id="client" type="radio" name="registration-type" value="client" onChange={handleRegistrationTypeChange} />
+                                            <label htmlFor="client">Client</label>
+                                        </div>
+                                        <div className={registerStyles.merchantRadioWrapper}>
+                                            <input checked={registrationType === "merchant"} id="merchant" type="radio" name="registration-type" value="merchant" onChange={handleRegistrationTypeChange} />
+                                            <label htmlFor="merchant">Merchant</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div className={registerStyles.companyNameWrapper} style={{ display: registrationType === 'merchant' ? 'block' : 'none' }}>
+                                    <div>
+                                        <div className={`${registerStyles.labelWrapper} ${registerStyles.companyNameLabelWrapper}`}>
+                                            <label htmlFor="company-name">Company Name:</label>
+                                        </div>
+                                        <div className={registerStyles.companyNameInput}>
+                                            <input id="company-name" type="text" value={companyName} onChange={(e) => setCompanyName(e.target.value)} placeholder="company name" required={registrationType === "merchant"} />
+                                        </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <div className={registerStyles.labelWrapper}>
-                                        <label htmlFor="password">Password:</label>
-                                    </div>
-                                    <div className={registerStyles.passwordInput}>
-                                        <input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}
-                                            placeholder="password" required />
+                                <div className={registerStyles.logoUploadWrapper} style={{ display: registrationType === 'merchant' ? 'block' : 'none' }}>
+                                    {/* <div>Upload an Company Logo (optional)</div> */}
+                                    <div>
+                                        <div className={registerStyles.logoInput}>
+                                            <button className={registerStyles.logoButton} type="button" onClick={() => document.getElementById('logo').click()}>
+                                                Choose a company logo
+                                            </button>
+                                            <input type="file" id="logo" name="logo" onChange={handleLogoChange} />
+
+                                            <span>
+                                                {logo ? logo.name : 'No file chosen'}
+                                                <button type="button" style={{ display: logo ? 'inline' : 'none' }} onClick={handleLogoClear}>
+                                                    Clear
+                                                </button>
+                                            </span>
+
+
+                                            {/* <div>
+                                                {logo ? logo.name : 'No file chosen'}
+                                                <button type="button" style={{ display: logo ? 'inline' : 'none' }} onClick={handleLogoClear}>
+                                                    Clear
+                                                </button>
+                                            </div> */}
+
+
+
+
+
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className={registerStyles.registrationTypeWrapper}>
-                                <div className={registerStyles.labelWrapper}>
-                                    Registration Type:
+                                <div className={registerStyles.registerButtonWrapper}>
+                                    <input type="submit" value="Register" />
                                 </div>
-                                <div className={registerStyles.registrationTypeRadioWrapper}>
-                                    <div className={registerStyles.clientRadioWrapper}>
-                                        <input checked={registrationType === "client"} id="client" type="radio" name="registration-type" value="client" onChange={handleRegistrationTypeChange} />
-                                        <label htmlFor="client">Client</label>
-                                    </div>
-                                    <div className={registerStyles.merchantRadioWrapper}>
-                                        <input checked={registrationType === "merchant"} id="merchant" type="radio" name="registration-type" value="merchant" onChange={handleRegistrationTypeChange} />
-                                        <label htmlFor="merchant">Merchant</label>
+                                <div className={registerStyles.loginPromptWrapper}>
+                                    <div className={registerStyles.loginPrompt}>
+                                        Already have an account?{' '}
+                                        <span><Link href="/users/login">Login</Link></span>
                                     </div>
                                 </div>
 
-                            </div>
-                            <div className={registerStyles.companyNameWrapper} style={{ display: registrationType === 'merchant' ? 'block' : 'none' }}>
-                                <div>
-                                    <div className={registerStyles.labelWrapper}>
-                                        <label htmlFor="company-name">Company Name:</label>
-                                    </div>
-                                    <div className={registerStyles.companyNameInput}>
-                                        <input id="company-name" type="text" value={companyName} onChange={(e) => setCompanyName(e.target.value)} placeholder="company name" required={registrationType === "merchant"} />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={registerStyles.logoUploadWrapper} style={{ display: registrationType === 'merchant' ? 'block' : 'none' }}>
-                                {/* <div>Upload an Company Logo (optional)</div> */}
-                                <div>
-                                    <div className={registerStyles.logoInput}>
-                                        <button className={registerStyles.logoButton} type="button" onClick={() => document.getElementById('logo').click()}>
-                                            Choose a company logo
-                                        </button>
-                                        <input type="file" id="logo" name="logo" onChange={handleLogoChange} />
-                                        <span>
-                                            {logo ? logo.name : 'No file chosen'}
-                                        </span>
-                                        <button type="button" style={{ display: logo ? 'inline' : 'none' }} onClick={handleLogoClear}>
-                                            Clear
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={registerStyles.registerButtonWrapper}>
-                                <input type="submit" value="Register" />
-                            </div>
-                            <div className={registerStyles.loginPrompt}>
-                                Already have an account?{' '}
-                                <span><Link href="/users/login">Login</Link></span>
-                            </div>
 
-
+                            </div>
                         </div>
                     </div>
-                </div>
-            </form >
-        </div >
+                </form >
+            </div >
+        </div>
     )
 }
