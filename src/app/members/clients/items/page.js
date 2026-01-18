@@ -172,21 +172,38 @@ export default function ClientGetAllItems() {
         console.log("typeof currentQuantity", typeof currentQuantity);
         console.log("currentQuantity", currentQuantity);
 
-        let nextItemQuantityState = {
-            ...itemQuantityState
-        };
+        // let nextItemQuantityState = {
+        //     ...itemQuantityState
+        // };
 
         if (currentQuantity === "") {
-            nextItemQuantityState[targetId] = {
-                ...nextItemQuantityState[targetId],
-                itemQuantity: 1,
-                quantityIsOk: true,
-                isNaNTextOn: false,
-                isNotAnIntegerTextOn: false,
-                minMaxNumTextOn: false
-            }
-            // return setItemQuantityState(nextItemQuantityState);
-            return setItemQuantityState((state) => nextItemQuantityState);
+            // nextItemQuantityState[targetId] = {
+            //     ...nextItemQuantityState[targetId],
+            //     itemQuantity: 1,
+            //     quantityIsOk: true,
+            //     isNaNTextOn: false,
+            //     isNotAnIntegerTextOn: false,
+            //     minMaxNumTextOn: false
+            // }
+            // // return setItemQuantityState(nextItemQuantityState);
+            // return setItemQuantityState((state) => nextItemQuantityState);
+            return setItemQuantityState((previousItemQuantityState) => {
+                console.log('previousItemQuantityState', previousItemQuantityState);
+                let nextItemQuantityState = {
+                    ...previousItemQuantityState
+                };
+                console.log('AAAAnextItemQuantityState', nextItemQuantityState);
+                nextItemQuantityState[targetId] = {
+                    ...nextItemQuantityState[targetId],
+                    itemQuantity: 1,
+                    quantityIsOk: true,
+                    isNaNTextOn: false,
+                    isNotAnIntegerTextOn: false,
+                    minMaxNumTextOn: false
+                };
+                console.log('BBBBnextItemQuantityState', nextItemQuantityState);
+                return nextItemQuantityState;
+            })
         }
 
         if (typeof currentQuantity === "number") {
@@ -194,32 +211,67 @@ export default function ClientGetAllItems() {
                 currentQuantity + 1 < 1
                 || currentQuantity + 1 > 1000
             ) {
-                nextItemQuantityState[targetId] = {
-                    ...nextItemQuantityState[targetId],
-                    itemQuantity: currentQuantity + 1,
-                    quantityIsOk: false,
-                    isNaNTextOn: false,
-                    isNotAnIntegerTextOn: false,
-                    minMaxNumTextOn: true
-                }
-                // return setItemQuantityState(nextItemQuantityState);
-                return setItemQuantityState((state) => nextItemQuantityState);
+                // nextItemQuantityState[targetId] = {
+                //     ...nextItemQuantityState[targetId],
+                //     itemQuantity: currentQuantity + 1,
+                //     quantityIsOk: false,
+                //     isNaNTextOn: false,
+                //     isNotAnIntegerTextOn: false,
+                //     minMaxNumTextOn: true
+                // }
+                // // return setItemQuantityState(nextItemQuantityState);
+                // return setItemQuantityState((state) => nextItemQuantityState);
+                return setItemQuantityState((previousItemQuantityState) => {
+                    console.log('previousItemQuantityState', previousItemQuantityState);
+                    let nextItemQuantityState = {
+                        ...previousItemQuantityState
+                    };
+                    console.log('AAAAnextItemQuantityState', nextItemQuantityState);
+                    nextItemQuantityState[targetId] = {
+                        ...nextItemQuantityState[targetId],
+                        itemQuantity: currentQuantity + 1,
+                        quantityIsOk: false,
+                        isNaNTextOn: false,
+                        isNotAnIntegerTextOn: false,
+                        minMaxNumTextOn: true
+                    };
+                    console.log('BBBBnextItemQuantityState', nextItemQuantityState);
+                    return nextItemQuantityState;
+                })
             }
 
             if (
                 currentQuantity + 1 >= 1
                 && currentQuantity + 1 <= 1000
             ) {
-                nextItemQuantityState[targetId] = {
-                    ...nextItemQuantityState[targetId],
-                    itemQuantity: currentQuantity + 1,
-                    quantityIsOk: true,
-                    isNaNTextOn: false,
-                    isNotAnIntegerTextOn: false,
-                    minMaxNumTextOn: false
-                }
-                // return setItemQuantityState(nextItemQuantityState);
-                return setItemQuantityState((state) => nextItemQuantityState);
+                // nextItemQuantityState[targetId] = {
+                //     ...nextItemQuantityState[targetId],
+                //     itemQuantity: currentQuantity + 1,
+                //     quantityIsOk: true,
+                //     isNaNTextOn: false,
+                //     isNotAnIntegerTextOn: false,
+                //     minMaxNumTextOn: false
+                // }
+                // // return setItemQuantityState(nextItemQuantityState);
+                // return setItemQuantityState((state) => nextItemQuantityState);
+
+                return setItemQuantityState((previousItemQuantityState) => {
+                    console.log('previousItemQuantityState', previousItemQuantityState);
+                    let nextItemQuantityState = {
+                        ...previousItemQuantityState
+                    };
+                    console.log('AAAAnextItemQuantityState', nextItemQuantityState);
+                    nextItemQuantityState[targetId] = {
+                        ...nextItemQuantityState[targetId],
+                        itemQuantity: currentQuantity + 1,
+                        quantityIsOk: true,
+                        isNaNTextOn: false,
+                        isNotAnIntegerTextOn: false,
+                        minMaxNumTextOn: false
+                    };
+                    console.log('BBBBnextItemQuantityState', nextItemQuantityState);
+                    return nextItemQuantityState;
+                });
             }
 
 
@@ -236,21 +288,39 @@ export default function ClientGetAllItems() {
         console.log("typeof currentQuantity", typeof currentQuantity);
         console.log("currentQuantity", currentQuantity);
 
-        let nextItemQuantityState = {
-            ...itemQuantityState
-        };
+        // let nextItemQuantityState = {
+        //     ...itemQuantityState
+        // };
 
         if (currentQuantity === "") {
-            nextItemQuantityState[targetId] = {
-                ...nextItemQuantityState[targetId],
-                itemQuantity: -1,
-                quantityIsOk: false,
-                isNaNTextOn: false,
-                isNotAnIntegerTextOn: false,
-                minMaxNumTextOn: true
-            }
-            // return setItemQuantityState(nextItemQuantityState);
-            return setItemQuantityState((state) => nextItemQuantityState);
+            // nextItemQuantityState[targetId] = {
+            //     ...nextItemQuantityState[targetId],
+            //     itemQuantity: -1,
+            //     quantityIsOk: false,
+            //     isNaNTextOn: false,
+            //     isNotAnIntegerTextOn: false,
+            //     minMaxNumTextOn: true
+            // }
+            // // return setItemQuantityState(nextItemQuantityState);
+            // return setItemQuantityState((state) => nextItemQuantityState);
+
+            return setItemQuantityState((previousItemQuantityState) => {
+                console.log('previousItemQuantityState', previousItemQuantityState);
+                let nextItemQuantityState = {
+                    ...previousItemQuantityState
+                };
+                console.log('AAAAnextItemQuantityState', nextItemQuantityState);
+                nextItemQuantityState[targetId] = {
+                    ...nextItemQuantityState[targetId],
+                    itemQuantity: -1,
+                    quantityIsOk: false,
+                    isNaNTextOn: false,
+                    isNotAnIntegerTextOn: false,
+                    minMaxNumTextOn: true
+                };
+                console.log('BBBBnextItemQuantityState', nextItemQuantityState);
+                return nextItemQuantityState;
+            })
         }
 
         if (typeof currentQuantity === "number") {
@@ -258,32 +328,68 @@ export default function ClientGetAllItems() {
                 currentQuantity - 1 < 1
                 || currentQuantity - 1 > 1000
             ) {
-                nextItemQuantityState[targetId] = {
-                    ...nextItemQuantityState[targetId],
-                    itemQuantity: currentQuantity - 1,
-                    quantityIsOk: false,
-                    isNaNTextOn: false,
-                    isNotAnIntegerTextOn: false,
-                    minMaxNumTextOn: true
-                }
-                // return setItemQuantityState(nextItemQuantityState);
-                return setItemQuantityState((state) => nextItemQuantityState);
+                // nextItemQuantityState[targetId] = {
+                //     ...nextItemQuantityState[targetId],
+                //     itemQuantity: currentQuantity - 1,
+                //     quantityIsOk: false,
+                //     isNaNTextOn: false,
+                //     isNotAnIntegerTextOn: false,
+                //     minMaxNumTextOn: true
+                // }
+                // // return setItemQuantityState(nextItemQuantityState);
+                // return setItemQuantityState((state) => nextItemQuantityState);
+
+                return setItemQuantityState((previousItemQuantityState) => {
+                    console.log('previousItemQuantityState', previousItemQuantityState);
+                    let nextItemQuantityState = {
+                        ...previousItemQuantityState
+                    };
+                    console.log('AAAAnextItemQuantityState', nextItemQuantityState);
+                    nextItemQuantityState[targetId] = {
+                        ...nextItemQuantityState[targetId],
+                        itemQuantity: currentQuantity - 1,
+                        quantityIsOk: false,
+                        isNaNTextOn: false,
+                        isNotAnIntegerTextOn: false,
+                        minMaxNumTextOn: true
+                    };
+                    console.log('BBBBnextItemQuantityState', nextItemQuantityState);
+                    return nextItemQuantityState;
+                })
             }
 
             if (
                 currentQuantity - 1 >= 1
                 && currentQuantity - 1 <= 1000
             ) {
-                nextItemQuantityState[targetId] = {
-                    ...nextItemQuantityState[targetId],
-                    itemQuantity: currentQuantity - 1,
-                    quantityIsOk: true,
-                    isNaNTextOn: false,
-                    isNotAnIntegerTextOn: false,
-                    minMaxNumTextOn: false
-                }
-                // return setItemQuantityState(nextItemQuantityState);
-                return setItemQuantityState((state) => nextItemQuantityState);
+                // nextItemQuantityState[targetId] = {
+                //     ...nextItemQuantityState[targetId],
+                //     itemQuantity: currentQuantity - 1,
+                //     quantityIsOk: true,
+                //     isNaNTextOn: false,
+                //     isNotAnIntegerTextOn: false,
+                //     minMaxNumTextOn: false
+                // }
+                // // return setItemQuantityState(nextItemQuantityState);
+                // return setItemQuantityState((state) => nextItemQuantityState);
+
+                return setItemQuantityState((previousItemQuantityState) => {
+                    console.log('previousItemQuantityState', previousItemQuantityState);
+                    let nextItemQuantityState = {
+                        ...previousItemQuantityState
+                    };
+                    console.log('AAAAnextItemQuantityState', nextItemQuantityState);
+                    nextItemQuantityState[targetId] = {
+                        ...nextItemQuantityState[targetId],
+                        itemQuantity: currentQuantity - 1,
+                        quantityIsOk: true,
+                        isNaNTextOn: false,
+                        isNotAnIntegerTextOn: false,
+                        minMaxNumTextOn: false
+                    };
+                    console.log('BBBBnextItemQuantityState', nextItemQuantityState);
+                    return nextItemQuantityState;
+                })
             }
         }
 
@@ -752,21 +858,17 @@ export default function ClientGetAllItems() {
         //     return;
         // }
 
-        // Step 1: 清除舊計時器
         if (timerRef.current) {
             clearTimeout(timerRef.current);
             timerRef.current = null;
         }
 
-        // Step 2: 強制先隱藏（中斷動畫）
         setShow(false);
 
-        // Step 3: 下一幀再顯示 → 觸發 CSS 淡入動畫
         requestAnimationFrame(() => {
             setShow(true);
         });
 
-        // Step 4: 啟動新計時器
         timerRef.current = setTimeout(() => {
             setShow(false);
             timerRef.current = null;
