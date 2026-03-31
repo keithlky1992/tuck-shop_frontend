@@ -66,6 +66,25 @@
     display: none;
 }
 
+.recording {
+    transition: all 0.6s;
+	transition-delay: 0.4s;
+	/* animation: shadowPulse 3s ease-in-out infinite;  */
+	animation: shadowPulse 1s ease-in-out infinite; 
+}
+
+@keyframes shadowPulse {
+	0% {
+		background: rgba(0, 0, 0, 0.6);
+	}
+	50% {
+		background: rgba(0, 0, 0, 0.4);
+	}
+	100% {
+		background: rgba(0, 0, 0, 0.6);
+	}
+}
+
 
 
 @media only screen and (max-width: 600px) {

@@ -35,6 +35,7 @@ export function MemberProvider({ children }) {
   const [showCloseImage, setShowCloseImage] = useState(false);
   const [showSoundImage, setShowSoundImage] = useState(false);
   const backendUrlHost = "192.168.50.135:4000";
+  // const backendUrlHost = "172.20.10.4:4000";
   
 
   console.log('user', user);

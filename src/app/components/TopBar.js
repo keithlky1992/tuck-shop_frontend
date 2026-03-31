@@ -179,9 +179,16 @@ export default function TopBar() {
                         <div className={topBarStyles.voiceCommand1}>
                             {voiceCommand}
                         </div>
+                        {/* <div
+                            style={{ display: isRecording ? '' : "none" }}
+                        >
+                            (Recording...)
+                        </div> */}
 
                         <img
                             src={soundImage.src}
+                            // className={topBarStyles.recording}
+                            className={`${showSoundImage && isRecording ? topBarStyles.recording : ''}`}
                             alt='sound'
                             // style={{ display: "none" }}
                             style={{ display: showSoundImage ? '' : "none" }}
