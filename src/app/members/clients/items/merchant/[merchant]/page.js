@@ -964,8 +964,6 @@ export default function ClientGetSelectedItems() {
                                     >
                                         <div className={itemStyles.itemContainer}>
                                             <img
-                                                // src={`http://localhost:4000${item.pictures[0]}`} // Path relative to the public folder
-                                                // src={`http://192.168.50.135:4000${item.pictures[0]}`} // Path relative to the public folder
                                                 src={`http://${backendUrlHost}${item.pictures[0]}`} // Path relative to the public folder
                                                 alt="image"
                                                 className={itemStyles.itemImg}

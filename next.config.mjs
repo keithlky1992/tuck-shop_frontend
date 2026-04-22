@@ -7,10 +7,8 @@ const nextConfig = {
         return [
             {
                 source: "/api/:path*",
-                // destination: `http://172.20.10.4:4000/:path*`,
-                destination: `http://192.168.50.135:4000/:path*`,
-                // destination: `http://localhost:4000/:path*`,
-                // destination: `${API_URL}/:path*`,
+                destination: `http://localhost:4000/:path*`,
+                // destination can be changed to the IP address of the machine running the backend server
             },
         ];
     },

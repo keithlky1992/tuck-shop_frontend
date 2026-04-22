@@ -249,8 +249,6 @@ export default function MerchantList() {
                                     >
                                         <div className={merchantListStyles.merchantContainer}>
                                             <img
-                                                // src={`http://localhost:4000${merchant.company_logo}`}
-                                                // src={`http://192.168.50.135:4000${merchant.company_logo}`}
                                                 src={`http://${backendUrlHost}${merchant.company_logo}`}
                                                 alt='company logo'
                                             />

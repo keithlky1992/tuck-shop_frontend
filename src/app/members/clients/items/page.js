@@ -1345,10 +1345,7 @@ export default function ClientGetAllItems() {
                                     <Link href={`/members/clients/items/${item.item_id}`} >
                                         <div className={itemStyles.itemContainer}>
                                             <img
-                                                // src={`http://localhost:4000${item.pictures[0]}`} // Path relative to the public folder
-                                                // src={`http://192.168.50.135:4000${item.pictures[0]}`} // Path relative to the public folder
                                                 src={`http://${backendUrlHost}${item.pictures[0]}`} // Path relative to the public folder
-                                                // src={`${location.host}${item.pictures[0]}`} // Path relative to the public folder
                                                 alt="image"
                                                 className={itemStyles.itemImg}
                                             />

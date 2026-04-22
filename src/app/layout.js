@@ -34,8 +34,8 @@ export function MemberProvider({ children }) {
   const [showMenuImage, setShowMenuImage] = useState(true);
   const [showCloseImage, setShowCloseImage] = useState(false);
   const [showSoundImage, setShowSoundImage] = useState(false);
-  const backendUrlHost = "192.168.50.135:4000";
-  // const backendUrlHost = "172.20.10.4:4000";
+  const backendUrlHost = "localhost:4000";
+  // backendUrlHost can be changed to the IP address of the machine running the backend server
   
 
   console.log('user', user);

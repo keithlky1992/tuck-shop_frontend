@@ -254,8 +254,6 @@ export default function MerchantItemDetails() {
                                             onClick={() => handlePopupClick(index)}
                                         >
                                             <img
-                                                // src={`http://localhost:4000${picture}`}
-                                                // src={`http://192.168.50.135:4000${picture}`}
                                                 src={`http://${backendUrlHost}${picture}`}
                                                 id={`picture${index}`}
                                                 className={itemDetailsStyles.img}
@@ -263,8 +261,6 @@ export default function MerchantItemDetails() {
                                             {popupId === index ?
                                                 <PicOverlay id={index}>
                                                     <img
-                                                        // src={`http://localhost:4000${picture}`}
-                                                        // src={`http://192.168.50.135:4000${picture}`}
                                                         src={`http://${backendUrlHost}${picture}`}
                                                         id={`magnifiedImg${index}`}
                                                         className={itemDetailsStyles.magnifiedImg}

@@ -80,8 +80,6 @@ export default function SubscribedMerchantList() {
                                         href={`/members/clients/items/merchant/${subscribedMerchant.merchant_username}`}
                                     >
                                         <img
-                                            // src={`http://localhost:4000${subscribedMerchant.company_logo}`}
-                                            // src={`http://192.168.50.135:4000${subscribedMerchant.company_logo}`}
                                             src={`http://${backendUrlHost}${subscribedMerchant.company_logo}`}
                                             alt='company logo'
                                         />
